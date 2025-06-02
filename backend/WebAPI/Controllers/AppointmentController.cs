@@ -13,7 +13,7 @@ namespace WebAPI.Controllers
         private AppointmentDAO appointmentDAO = new AppointmentDAO();
 
         [HttpGet("PendingAppointment")]
-        public List<PendingAppointmentDTO> getPendingAppointment(string stylistUser)
+        public List<PendingAppointmentDTO> getPendingAppointments(string stylistUser)
         {
             return appointmentDAO.getPendingAppointments(stylistUser);
         }

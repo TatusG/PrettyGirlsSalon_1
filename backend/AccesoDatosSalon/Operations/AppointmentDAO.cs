@@ -25,7 +25,7 @@ namespace AccesoDatosSalon.Opetarions
         {
             return contexto.Appointments.FirstOrDefault(a => a.Id == id);
         }
-
+        
         // Insertar nueva cita
         public bool createAppointment(int clientId, int serviceId, string stylistUser, DateTime date) 
         { 
@@ -37,7 +37,7 @@ namespace AccesoDatosSalon.Opetarions
                     ServiceId = serviceId,
                     StylistUser = stylistUser,
                     AppointmentDateTime = date,
-                    AppointmentStatus = "Pendiente"
+                    AppointmentStatus = "Pending"
                 };
 
                 contexto.Appointments.Add(appointment);
@@ -99,7 +99,7 @@ namespace AccesoDatosSalon.Opetarions
                         join c in contexto.Clients on a.ClientId equals c.Id
                         join s in contexto.ServiceRequests on a.ServiceId equals s.Id
                         join st in contexto.Stylists on a.StylistUser equals st.UserName
-                        where (a.StylistUser == stylistUser && a.AppointmentStatus == "Pendiente")
+                        where (a.StylistUser == stylistUser && a.AppointmentStatus == "pending")
                         select new PendingAppointmentDTO
                         {
                             Id = a.Id,
