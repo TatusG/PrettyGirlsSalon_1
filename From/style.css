@@ -1,0 +1,49 @@
+body, html {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(Logo1.jpeg) center center;
+    background-size: cover;
+    margin: 0;
+}
+
+.contenido-central {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.contenedor {
+    text-align: center;
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(133, 19, 19, 0.416);
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-top: 150px;
+}
+
+.boton-redireccion {
+    margin-top: 200px;
+    background-color: #f26d5b7e;
+    color: rgb(6, 6, 6);
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.boton-redireccion:hover {
+    background-color: #ff4f3b;
+}
+
+.logo-grande {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+

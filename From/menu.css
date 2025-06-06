@@ -1,0 +1,49 @@
+body, html {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(Logo2.jpeg) no-repeat top left;
+    background-color: black;
+    background-size: auto; /* o un tamaño fijo como 100px 100px */
+    margin: 0;
+    color: white;
+}
+
+.contenido-central {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.contenedor {
+    text-align: center;
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(173, 17, 17, 0.1);
+    background-color: rgba(111, 71, 71, 0.545);
+    margin-top: 150px;
+}
+
+.boton-redireccion {
+    margin-top: 220px;
+    background-color: #f26d5bb4;
+    color: rgba(8, 7, 7, 0.39);
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.boton-redireccion:hover {
+    background-color: #ff4f3b59;
+}
+
+.logo-grande {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 20px;
+}
