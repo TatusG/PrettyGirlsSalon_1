@@ -1,0 +1,43 @@
+/* src/assets/styles/menu.css */
+.menu-contenedor {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../image/Logo2.jpeg') no-repeat center center;
+    background-color: rgba(0, 0, 0, 0.7);
+    background-blend-mode: overlay;
+    background-size: cover;
+    color: white;
+}
+
+.menu-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    border-radius: 30px;
+    background-color: rgba(111, 71, 71, 0.545);
+    box-shadow: 0 4px 8px rgba(173, 17, 17, 0.1);
+}
+
+.boton-redireccion {
+    margin-top: 20px;
+    background-color: var(--color-primary);
+    box-shadow: var(--shadow);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    min-width: 120px;
+    min-height: 44px;
+}
+
+.boton-redireccion:hover {
+    background-color: #ff4f3b;
+}

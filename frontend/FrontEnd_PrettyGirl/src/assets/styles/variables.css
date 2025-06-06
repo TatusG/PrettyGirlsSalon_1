@@ -1,0 +1,12 @@
+:root {
+  --color-primary: #ff6b8b; /* Rosa pastel */
+  --color-secondary: #ffb3c6; /* Rosa más claro */
+  --color-danger: #ff4f3b; /* Rojo suave */
+  --color-success: #4ecdc4; /* Verde menta */
+  --text-dark: #333;
+  --text-light: #fff;  
+  --max-with: 1200px; /* Ancho máximo para el contenido */
+  --border-radius: 12px; /* Bordes redondeados */
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,29 @@
+@import './variables.css'; /* Importa variables primero */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #fff9f9; /* Fondo rosado claro */
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Tamaño de fuente más pequeño en móviles */
+  }
+}
+
+.menu-contenedor, .resena-contenedor {
+  padding: 15px;
+ 
+}
+
+:focus-visible{
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
