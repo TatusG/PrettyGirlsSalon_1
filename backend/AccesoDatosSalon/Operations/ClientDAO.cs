@@ -22,6 +22,11 @@ namespace AccesoDatosSalon.Opetarions
 
         public bool addClient(string dni, string name, string phone, string email)
         {
+            if (string.IsNullOrEmpty(dni) || string.IsNullOrEmpty(name))
+            {
+                return false;
+            }
+
             try
             {
                 Client client = new Client();
@@ -30,6 +35,7 @@ namespace AccesoDatosSalon.Opetarions
                 client.FullName = name;
                 client.Phone = phone;
                 client.Email = email;
+                client.RegistrationDate = DateOnly.FromDateTime(DateTime.Now);
                 contexto.Clients.Add(client);
                 contexto.SaveChanges();
 
@@ -43,9 +49,14 @@ namespace AccesoDatosSalon.Opetarions
 
         public bool updateClient(int id, string dni, string name, string phone, string email, DateOnly fechaRegistro)
         {
+            if (string.IsNullOrEmpty(dni) || string.IsNullOrEmpty(name))
+            {
+                return false;
+            }
+
             try
             {
-                var cliente =getClient(id);
+                var cliente = getClient(id);
                 if (cliente == null)
                 {
                     return false;
@@ -54,11 +65,10 @@ namespace AccesoDatosSalon.Opetarions
                 {
                     cliente.Dni = dni;
                     cliente.FullName = name;
-                    cliente.Phone = phone;
-                    cliente.Email = email;
-                    cliente.RegistrationDate = fechaRegistro;
+                    cliente.Phone = phone?? cliente.Phone; //Mantiene valor actual si phone es null
+                    cliente.Email = email?? cliente.Email; //Mantiene valor actual si email es null                       
                     contexto.SaveChanges();
-                    return true;
+                    return true;                                        
                 }
             }
             catch (Exception ex)
@@ -74,7 +84,7 @@ namespace AccesoDatosSalon.Opetarions
                 var cliente = getClient(id);
                 if (cliente == null)
                 {
-                    return false;
+                    return false; //cliente no existe
                 }
                 else
                 {
@@ -89,7 +99,14 @@ namespace AccesoDatosSalon.Opetarions
             }
         }
 
+        public List<Client> SearchClients(string name)
+        {
+            return contexto.Clients.Where(c=> c.FullName.Contains(name)).ToList();
+        }
 
-
+        public bool ClientExists(int id)
+        {
+            return contexto.Clients.Any(c => c.Id == id);
+        }
     }
 }

@@ -28,11 +28,22 @@ namespace AccesoDatosSalon.Opetarions
 
         public bool IsTimeSlotAvailable(string stylistUser, DateTime date)
         {
-            return contexto.Appointments.Any(a=> a.StylistUser == stylistUser && a.AppointmentDateTime == date && a.AppointmentStatus != "Cancelled");
+            //Verifica si el rango está dentro del horario laboral (9am-7pm)
+            if (date.TimeOfDay < TimeSpan.FromHours(9) || date.TimeOfDay >= TimeSpan.FromHours(19))
+            {
+                return false;
+            }
+            else
+            {
+                return contexto.Appointments.Any(
+                    a=> a.StylistUser == stylistUser && 
+                    a.AppointmentDateTime == date &&
+                    a.AppointmentStatus != "Cancelled");
+            }
         }
         
         // Insertar nueva cita
-        public bool createAppointment(int clientId, int serviceId, string stylistUser, DateTime date) 
+        public bool createAppointment(int clientId, int serviceId, string stylistUser, DateTime date, string notes) 
         { 
             try
             {
@@ -41,8 +52,9 @@ namespace AccesoDatosSalon.Opetarions
                     ClientId = clientId,
                     ServiceId = serviceId,
                     StylistUser = stylistUser,
-                    AppointmentDateTime = date,
-                    AppointmentStatus = "Pending"
+                    AppointmentDateTime = date,                    
+                    AppointmentStatus = "Pending",
+                    Notes = notes
                 };
 
                 contexto.Appointments.Add(appointment);
@@ -54,22 +66,20 @@ namespace AccesoDatosSalon.Opetarions
                 return false;
             }
         }
-
-        // Actualizar cita existente
-        public bool updateAppointment(int id, int clientId, int serviceId, string stylistUser, DateTime date, string status, string commen = null)
+        
+        public bool updateAppointmentStatus(int id, string status)
         {
             try
             {
                 var appointment = getAppointment(id);
-                if (date == null) return false;
+                if (appointment == null) return false;
 
-                appointment.ClientId = clientId;
-                appointment.ServiceId = serviceId;
-                appointment.StylistUser = stylistUser;
-                appointment.AppointmentDateTime = date;
+                var validStatuses = new[] { "Pendind", "Comfirmed", "Completed", "Cancelled" };
+                if (validStatuses.Contains(status))
+                {
+                    return false ;
+                }
                 appointment.AppointmentStatus = status;
-                appointment.Notes = commen;
-
                 contexto.SaveChanges();
                 return true;
             }
@@ -129,6 +139,16 @@ namespace AccesoDatosSalon.Opetarions
                     horariosDisponibles.Add(hora);
             }
             return horariosDisponibles;
+        }
+
+        public List<Appointment> GetAppointmentsByClient(int clientId)
+        {
+            return contexto.Appointments.Where(a => a.ClientId == clientId).OrderByDescending(a => a.AppointmentDateTime).ToList();
+        }
+
+        public List<Appointment> GetAppointmentByDate(DateTime date)
+        {
+            return contexto.Appointments.Where(a => a.AppointmentDateTime.Date == date.Date).OrderBy(a => a.AppointmentDateTime).ToList();
         }
     }
 }

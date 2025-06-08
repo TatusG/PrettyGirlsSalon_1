@@ -14,5 +14,6 @@ namespace AccesoDatosSalon.Models.DTOS
         public int ServicioId { get; set; }
         public string EstilistaUser { get; set; }    
         public DateTime FechaDeCita { get; set; }
+        public string notas { get; set; }
     }
 }

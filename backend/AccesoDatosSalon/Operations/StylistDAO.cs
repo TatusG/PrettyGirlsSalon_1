@@ -8,9 +8,14 @@ namespace AccesoDatosSalon.Opetarions
     {
         public PrettyGirlSalonContext contexto = new PrettyGirlSalonContext();
 
-        public Stylist login(string user, string password)
+        public LoginDTO login(string user, string password)
         {
-            var stylist = contexto.Stylists.Where(e => e.UserName == user && e.UserPassword == password).FirstOrDefault();            
+            var stylist = contexto.Stylists.Where(s => s.UserName.Equals(user) 
+            && s.UserPassword.Equals(password)).Select(s=>new LoginDTO
+            {
+                UserName = s.UserName,
+                Password = s.UserPassword,
+            }).FirstOrDefault();
             return stylist;
         }
 
@@ -27,19 +32,11 @@ namespace AccesoDatosSalon.Opetarions
 
         }
 
-        public bool addStylist(string userName, string password, string name, string speciality, string email, bool active)
+        public bool addStylist(Stylist newStylist)
         {
             try
             {
-                Stylist stylist = new Stylist();
-                stylist.UserName = userName;
-                stylist.UserPassword = password;
-                stylist.FullName = name;
-                stylist.Specialty = speciality;
-                stylist.Email = email;
-                stylist.IsActive = active;
-
-                contexto.Stylists.Add(stylist);
+                contexto.Stylists.Add(newStylist);
                 contexto.SaveChanges();
 
                 return true;
@@ -50,29 +47,30 @@ namespace AccesoDatosSalon.Opetarions
             }
         }
 
-        public bool updateStylist(string userName, string password, string name, string speciality, string email, bool active)
+        public bool updateStylist(Stylist updatedStylist)
         {
             try
             {
-                var stylist = getStylist(userName);
-                if (stylist == null)
+                var existing = getStylist(updatedStylist.UserName);
+                if (existing == null)
                 {
+                    Console.WriteLine("Estilista no encontrado");
                     return false;
                 }
-                else
-                {
-                    stylist.UserName = userName;
-                    stylist.UserPassword = password;
-                    stylist.FullName = name;
-                    stylist.Specialty = speciality;
-                    stylist.Email = email;
-                    stylist.IsActive = active;
-                    contexto.SaveChanges();
-                    return true;
-                }
+
+                // Actualiza solo los campos modificables (no el UserName que es el ID)
+                existing.UserPassword = updatedStylist.UserPassword;
+                existing.FullName = updatedStylist.FullName;
+                existing.Specialty = updatedStylist.Specialty;
+                existing.Email = updatedStylist.Email;
+                existing.IsActive = updatedStylist.IsActive;
+
+                contexto.SaveChanges();
+                return true;
             }
             catch (Exception ex)
             {
+                Console.WriteLine($"Error al actualizar: {ex.Message}"); // Para debugging
                 return false;
             }
         }
@@ -97,11 +95,7 @@ namespace AccesoDatosSalon.Opetarions
             catch (Exception ex)
             {
                 return false;
-
             }
-        }
-
-               
-
+        }          
     }
 }
