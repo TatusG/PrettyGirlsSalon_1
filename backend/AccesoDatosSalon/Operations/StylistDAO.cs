@@ -19,10 +19,10 @@ namespace AccesoDatosSalon.Opetarions
             return stylist;
         }
 
-        public List<Stylist> selectStylist()
+        public List<Stylist> selectStylist(bool active)
         {
-            var estylists = contexto.Stylists.ToList<Stylist>();
-            return estylists;
+            var stylists = contexto.Stylists.Where(s => s.IsActive == true).ToList();
+            return stylists;
         }
 
         public Stylist getStylist (string userName)

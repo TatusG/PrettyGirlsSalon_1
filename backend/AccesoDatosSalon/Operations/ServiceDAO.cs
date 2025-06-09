@@ -1,6 +1,7 @@
 ﻿using AccesoDatosSalon.Context;
 using AccesoDatosSalon.Models;
 using AccesoDatosSalon.Models.DTOS;
+using System.ComponentModel.Design;
 
 namespace AccesoDatosSalon.Opetarions
 {
@@ -10,7 +11,7 @@ namespace AccesoDatosSalon.Opetarions
 
         public List<ServiceRequest> allServices()
         {
-            var services = contexto.ServiceRequests.ToList<ServiceRequest>();
+            var services = contexto.ServiceRequests.Where(s => s.IsAvailable).ToList();
             return services;
         }
 
@@ -72,6 +73,7 @@ namespace AccesoDatosSalon.Opetarions
 
         public bool deleteService(int id)
         {
+
             try
             {
                 var service = getService(id);
@@ -81,13 +83,25 @@ namespace AccesoDatosSalon.Opetarions
                 }
                 else
                 {
-                    contexto.ServiceRequests.Remove(service);
-                    contexto.SaveChanges();
-                    return true;
-                }
+                    bool hasFutureAppointments = contexto.Appointments.Any(a => a.ServiceId == id && a.AppointmentDateTime > DateTime.Now && a.AppointmentStatus != "cancelled");
+
+                    if (hasFutureAppointments)
+                    {
+                        service.IsAvailable = false;
+                        contexto.SaveChanges();
+                        return true;
+                    }
+                    else
+                    {
+                        contexto.ServiceRequests.Remove(service);
+                        contexto.SaveChanges();
+                        return true;
+                    }
+                }               
             }
             catch (Exception ex)
             {
+                Console.WriteLine("Error al eliminar servicio : {ex.Message}");
                 return false;
             }
         }

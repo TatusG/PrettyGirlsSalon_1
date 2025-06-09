@@ -119,7 +119,5 @@ join stylist st on a.stylistUser = st.userName;
 	select * from appointment;
 	select * from review;
 	select * from serviceRequest;
-la
-
 	select s.userName
 	from stylist s where s.userName = 'tatus' and s.userPassword = '789';

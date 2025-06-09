@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace AccesoDatosSalon.Models.DTOS
 {
-    public class ServiceRequestDTO
+    public class ReviewUpdateDTO
     {
-        public int Id { get; set; }
-        public string ServiceName { get; set; }
-        public decimal Price { get; set; }
+        public int id { get; set; }
+        public string? response { get; set; }
     }
 }
