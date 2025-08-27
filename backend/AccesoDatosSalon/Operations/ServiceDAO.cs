@@ -1,6 +1,5 @@
 ﻿using AccesoDatosSalon.Context;
 using AccesoDatosSalon.Models;
-using AccesoDatosSalon.Models.DTOS;
 using System.ComponentModel.Design;
 
 namespace AccesoDatosSalon.Opetarions
@@ -15,9 +14,9 @@ namespace AccesoDatosSalon.Opetarions
             return services;
         }
 
-        public ServiceRequest getService (int id)
+        public async Task <ServiceRequest> getService (int id)
         {
-            var service = contexto.ServiceRequests.Where(s => s.Id == id).FirstOrDefault();
+            var service = contexto.ServiceRequests.Where(s => s.Id == id && s.IsAvailable).FirstOrDefault();
             return service;
         }
 
@@ -44,11 +43,11 @@ namespace AccesoDatosSalon.Opetarions
             }
         }
 
-        public bool updateService(int id, string serviceName, int duration, decimal price, string description, bool available)
+        public async Task <bool> updateService(int id, string serviceName, int duration, decimal price, string description, bool available)
         {
             try
             {
-                var service = getService(id);
+                var service = await getService(id);
 
                 if (service == null)
                 {
@@ -71,12 +70,12 @@ namespace AccesoDatosSalon.Opetarions
             }
         }
 
-        public bool deleteService(int id)
+        public async Task <bool> deleteService(int id)
         {
 
             try
             {
-                var service = getService(id);
+                var service = await getService(id);
                 if (service == null)
                 {
                     return false;

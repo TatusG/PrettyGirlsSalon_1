@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using AccesoDatosSalon.Context;
 using AccesoDatosSalon.Models;
-using AccesoDatosSalon.Models.DTOS;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace AccesoDatosSalon.Opetarions

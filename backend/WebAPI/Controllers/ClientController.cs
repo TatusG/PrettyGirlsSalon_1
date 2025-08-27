@@ -2,6 +2,7 @@
 using AccesoDatosSalon.Opetarions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using WebAPI.DTOS;
 
 namespace WebAPI.Controllers
 {
@@ -28,7 +29,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPut("client")]
-        public bool updateClient(int id, [FromBody] Client client)
+        public async Task <bool> updateClient(int id, [FromBody] Client client)
         {
             if (client == null || id != client.Id)
             {
@@ -36,7 +37,7 @@ namespace WebAPI.Controllers
             }
             else
             {
-                return clientDAO.updateClient(
+                return await clientDAO.updateClient(
                     client.Id, 
                     client.Dni, 
                     client.FullName, 
@@ -48,9 +49,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpDelete("client")]
-        public bool deleteClient(int id)
+        public async Task <bool> deleteClient(int id)
         {
-            return clientDAO.deleteCliente(id);
+            return await clientDAO.deleteCliente(id);
         }
 
         [HttpGet("search")]

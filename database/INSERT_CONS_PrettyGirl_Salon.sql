@@ -3,9 +3,10 @@ use PrettyGirl_Salon;
 -- Insertar estilistas (stylist)
 INSERT INTO stylist (userName, userPassword, fullName, specialty, email, isActive) 
 VALUES 
-('maria', '1234', 'María López', 'Coloración', 'maria@prettygirlbs.com', 1),
+('maria', '234', 'María Guerra', 'Coloración', 'maria@prettygirlbs.com', 1),
 ('juan', '567', 'Juan Pérez', 'Cortes masculinos', 'juan@prettygirlbs.com', 1),
 ('laura', '891', 'Laura García', 'Tratamientos capilares', 'laura@prettygirlbs.com', 1);
+('maricarmen', '4321', 'Maricarmen Zevallos', 'Maquilladora', 'mcarmen@gmail.com', 1);
 
 -- Insertar servicios (serviceRequest)
 INSERT INTO serviceRequest (serviceName, durationMinutes, servicePrice, serviceDescription, isAvailable)
@@ -79,11 +80,6 @@ JOIN stylist s ON a.stylistUser = s.userName
 GROUP BY s.fullName
 ORDER BY averageRating DESC;
 
-select * from client;
-select * from appointment;
-select * from serviceRequest;
-select * from stylist;
-
 -- Consulta Serivicios por cliente
 SELECT 
     c.id AS 'ID Cliente',
@@ -121,3 +117,17 @@ join stylist st on a.stylistUser = st.userName;
 	select * from serviceRequest;
 	select s.userName
 	from stylist s where s.userName = 'tatus' and s.userPassword = '789';
+
+-- Insertar estilistas (stylist)
+('maria',		'987654',	'María King',				'Coloración',					'maria@prettygirlbs.com', 1),
+('juan',		'987654',	'Juan Pérez',			'Cortes masculinos',			'juan@prettygirlbs.com', 1),
+('laura',		'123456',	'Laura García',			'Tratamientos capilares',		'laura@prettygirlbs.com', 1);
+('maricarmen',	'123456',	'Maricarmen Zevallos',	'Maquilladora',					'mcarmen@gmail.com', 1);
+('yahayra',		'123456',	'Yahayra SantaCruz',	'Administrador',				'yahayrasg@prettygirlbs.com', 1);
+('lizbel',		'123456',	'Lizbel Zapata',		'Cortes femeninos',				'lizbel@prettygirlbs.com', 1);
+
+
+select * from client;
+select * from appointment;
+select * from serviceRequest;
+select * from stylist;

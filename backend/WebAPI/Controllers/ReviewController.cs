@@ -1,8 +1,8 @@
 ﻿using AccesoDatosSalon.Models;
-using AccesoDatosSalon.Models.DTOS;
 using AccesoDatosSalon.Opetarions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using WebAPI.DTOS;
 
 namespace WebAPI.Controllers
 {

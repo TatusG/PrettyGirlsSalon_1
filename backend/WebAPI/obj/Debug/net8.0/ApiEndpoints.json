@@ -1,61 +1,105 @@
 [
   {
-    "ContainingType": "WebAPI.Controllers.AppointmentController",
-    "Method": "getAppointmen",
-    "RelativePath": "api/appointment",
-    "HttpMethod": "GET",
+    "ContainingType": "WebAPI.Controllers.StylistController",
+    "Method": "UpdateStylist",
+    "RelativePath": "api/actualizar",
+    "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": false
+        "Name": "updatedStylist",
+        "Type": "WebAPI.DTOS.StylistUpdateDTO",
+        "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "AccesoDatosSalon.Models.Appointment",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "WebAPI.Controllers.AppointmentController",
-    "Method": "updateAppointment",
-    "RelativePath": "api/appointment",
+    "Method": "UpdateAppointment",
+    "RelativePath": "api/actualizar-cita",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateDTO",
+        "Type": "WebAPI.DTOS.AppointmentUpdateDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.StylistController",
+    "Method": "updatePassword",
+    "RelativePath": "api/actualizar-password",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updatePasswordDTO",
+        "Type": "WebAPI.DTOS.UpdatePasswordDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.AppointmentController",
+    "Method": "UpdateAppointmentStatus",
+    "RelativePath": "api/actualizar-status",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "appointment",
-        "Type": "AccesoDatosSalon.Models.Appointment",
+        "Name": "statusDTO",
+        "Type": "WebAPI.DTOS.AppointmentStatusUpdateDTO",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.StylistController",
+    "Method": "DeleteStylist",
+    "RelativePath": "api/borrar",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
       {
-        "Type": "System.Boolean",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
+        "Name": "userName",
+        "Type": "System.String",
+        "IsRequired": false
       }
-    ]
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.StylistController",
+    "Method": "GetStylist",
+    "RelativePath": "api/buscar-estilista",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "WebAPI.Controllers.AppointmentController",
-    "Method": "deleteAppointment",
-    "RelativePath": "api/appointment",
-    "HttpMethod": "DELETE",
+    "Method": "GetAppointment",
+    "RelativePath": "api/citas-id",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -65,152 +109,7 @@
         "IsRequired": false
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Boolean",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "WebAPI.Controllers.AppointmentController",
-    "Method": "GetAppointmentsByDate",
-    "RelativePath": "api/appointment/date",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "date",
-        "Type": "System.DateTime",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[AccesoDatosSalon.Models.Appointment, AccesoDatosSalon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "WebAPI.Controllers.AppointmentController",
-    "Method": "CreateAppointment",
-    "RelativePath": "api/appointments",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "AccesoDatosSalon.Models.DTOS.CreateAppointmentDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Boolean",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "WebAPI.Controllers.AppointmentController",
-    "Method": "GetAppointmentByClient",
-    "RelativePath": "api/appointments/client",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "clientId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[AccesoDatosSalon.Models.Appointment, AccesoDatosSalon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "WebAPI.Controllers.AppointmentController",
-    "Method": "getPendingAppointments",
-    "RelativePath": "api/appointments/pending",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "stylistUser",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[AccesoDatosSalon.Models.DTOS.PendingAppointmentDTO, AccesoDatosSalon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "WebAPI.Controllers.AppointmentController",
-    "Method": "GetAvailableAppointments",
-    "RelativePath": "api/AvailableAppointments",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "stylistUser",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "date",
-        "Type": "System.DateTime",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "WebAPI.Controllers.ClientController",
@@ -296,6 +195,22 @@
     ]
   },
   {
+    "ContainingType": "WebAPI.Controllers.AppointmentController",
+    "Method": "GetClientAppointments",
+    "RelativePath": "api/cliente",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "clientId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebAPI.Controllers.ClientController",
     "Method": "GetAllClients",
     "RelativePath": "api/clients",
@@ -316,6 +231,64 @@
     ]
   },
   {
+    "ContainingType": "WebAPI.Controllers.AppointmentController",
+    "Method": "CreateAppointment",
+    "RelativePath": "api/crear-cita",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cita",
+        "Type": "WebAPI.DTOS.AppointmentBookingDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.StylistController",
+    "Method": "DeactivateStylist",
+    "RelativePath": "api/desactivar",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.AppointmentController",
+    "Method": "GetAvailability",
+    "RelativePath": "api/horarios",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "stylistUserName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "date",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "serviceId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebAPI.Controllers.StylistController",
     "Method": "login",
     "RelativePath": "api/login",
@@ -324,22 +297,38 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "estil",
-        "Type": "AccesoDatosSalon.Models.DTOS.LoginDTO",
+        "Name": "loginDTO",
+        "Type": "WebAPI.DTOS.LoginDTO",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.AppointmentController",
+    "Method": "GetStylistAppointments",
+    "RelativePath": "api/mis-citas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.StylistController",
+    "Method": "register",
+    "RelativePath": "api/registrar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
       {
-        "Type": "System.String",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
+        "Name": "stylistRegistered",
+        "Type": "WebAPI.DTOS.StylistRegisteredDTO",
+        "IsRequired": true
       }
-    ]
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "WebAPI.Controllers.ReviewController",
@@ -377,7 +366,7 @@
     "Parameters": [
       {
         "Name": "reviewDTO",
-        "Type": "AccesoDatosSalon.Models.DTOS.ReviewUpdateDTO",
+        "Type": "WebAPI.DTOS.ReviewUpdateDTO",
         "IsRequired": true
       }
     ],
@@ -449,7 +438,7 @@
     "Parameters": [
       {
         "Name": "reviewDTO",
-        "Type": "AccesoDatosSalon.Models.DTOS.ReviewCreateDTO",
+        "Type": "WebAPI.DTOS.ReviewCreateDTO",
         "IsRequired": true
       }
     ],
@@ -709,110 +698,6 @@
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.List\u00601[[AccesoDatosSalon.Models.ServiceRequest, AccesoDatosSalon, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "WebAPI.Controllers.StylistController",
-    "Method": "selectStylist",
-    "RelativePath": "api/stylist",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "username",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "AccesoDatosSalon.Models.Stylist",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "WebAPI.Controllers.StylistController",
-    "Method": "addStylist",
-    "RelativePath": "api/stylist",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "newStylist",
-        "Type": "AccesoDatosSalon.Models.Stylist",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Boolean",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "WebAPI.Controllers.StylistController",
-    "Method": "updateStylist",
-    "RelativePath": "api/stylist",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "updateStylist",
-        "Type": "AccesoDatosSalon.Models.Stylist",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Boolean",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "WebAPI.Controllers.StylistController",
-    "Method": "deleteStylist",
-    "RelativePath": "api/stylist",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "username",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Boolean",
         "MediaTypes": [
           "text/plain",
           "application/json",

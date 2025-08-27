@@ -1,71 +1,74 @@
 ﻿using AccesoDatosSalon.Context;
 using AccesoDatosSalon.Models;
-using AccesoDatosSalon.Models.DTOS;
+using AccesoDatosSalon.Plugins;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace AccesoDatosSalon.Opetarions
+namespace AccesoDatosSalon.Operations
 {
     public class StylistDAO
     {
-        public PrettyGirlSalonContext contexto = new PrettyGirlSalonContext();
-
-        public LoginDTO login(string user, string password)
+        private readonly PrettyGirlSalonContext context = new PrettyGirlSalonContext();
+                
+        public async Task<Stylist> login(string user, string password)
         {
-            var stylist = contexto.Stylists.Where(s => s.UserName.Equals(user) 
-            && s.UserPassword.Equals(password)).Select(s=>new LoginDTO
-            {
-                UserName = s.UserName,
-                Password = s.UserPassword,
-            }).FirstOrDefault();
-            return stylist;
+            string passwordHash = HashUtil.ObtenerMD5(password);
+            var styl = context.Stylists.Where(s => s.UserName == user && s.UserPassword == passwordHash).FirstOrDefault();
+            return styl;
         }
 
-        public List<Stylist> selectStylist(bool active)
+        public async Task <bool> addStylist(Stylist stylist)
         {
-            var stylists = contexto.Stylists.Where(s => s.IsActive == true).ToList();
-            return stylists;
-        }
+            bool exists = context.Stylists.Any(s => s.UserName == stylist.UserName);
 
-        public Stylist getStylist (string userName)
-        {
-            var stylist = contexto.Stylists.Where(s => s.UserName == userName).FirstOrDefault();
-            return stylist;
-
-        }
-
-        public bool addStylist(Stylist newStylist)
-        {
-            try
-            {
-                contexto.Stylists.Add(newStylist);
-                contexto.SaveChanges();
-
-                return true;
-            }
-            catch (Exception ex)
-            {
+            if (exists)
+            {                
                 return false;
             }
+            
+            stylist.UserPassword = HashUtil.ObtenerMD5(stylist.UserPassword);
+            context.Stylists.Add(stylist);
+            context.SaveChanges();
+            return true;
         }
 
-        public bool updateStylist(Stylist updatedStylist)
+        public async Task<bool> updatePassword(string user, string newPassword)
+        {
+            var stylist = context.Stylists.FirstOrDefault(s => s.UserName == user);
+
+            if (stylist == null) return false;
+
+            stylist.UserPassword = HashUtil.ObtenerMD5(newPassword);
+            context.SaveChanges();
+            return true;
+        }
+
+        public async Task <bool> updateStylist(Stylist updateStylist)
         {
             try
             {
-                var existing = getStylist(updatedStylist.UserName);
-                if (existing == null)
+                var stylist = context.Stylists.FirstOrDefault( s => s.UserName == updateStylist.UserName);
+                if (stylist == null)
                 {
                     Console.WriteLine("Estilista no encontrado");
                     return false;
                 }
 
-                // Actualiza solo los campos modificables (no el UserName que es el ID)
-                existing.UserPassword = updatedStylist.UserPassword;
-                existing.FullName = updatedStylist.FullName;
-                existing.Specialty = updatedStylist.Specialty;
-                existing.Email = updatedStylist.Email;
-                existing.IsActive = updatedStylist.IsActive;
+                // Actualiza solo los campos modificables (no el UserName que es el ID)                
+                stylist.FullName = updateStylist.FullName;
+                stylist.Specialty = updateStylist.Specialty;
+                stylist.Email = updateStylist.Email;
+                stylist.IsActive = updateStylist.IsActive;
 
-                contexto.SaveChanges();
+                if (!string.IsNullOrEmpty(updateStylist.UserPassword))
+                {
+                    stylist.UserPassword = HashUtil.ObtenerMD5(updateStylist.UserPassword);
+                }
+                context.SaveChanges();
                 return true;
             }
             catch (Exception ex)
@@ -75,27 +78,35 @@ namespace AccesoDatosSalon.Opetarions
             }
         }
 
-        public bool deleteStylist(string userName)
+        public async Task<List<Stylist>> selectStylist(bool active)
+        {
+            return context.Stylists.Where(s => s.IsActive == active).ToList();
+        }
+
+        public async Task<Stylist> getStylist(string userName)
+        {
+            return context.Stylists.FirstOrDefault(s => s.UserName == userName);
+        }
+
+        public async Task<bool> deleteStylist(string userName)
         {
             try
             {
-                var stylist = getStylist(userName);
-
+                var stylist = context.Stylists.FirstOrDefault(s => s.UserName == userName);
                 if (stylist == null)
                 {
                     return false;
                 }
-                else
-                {
-                    contexto.Stylists.Remove(stylist);
-                    contexto.SaveChanges();
-                    return true;
-                }
+
+                context.Stylists.Remove(stylist);
+                context.SaveChanges();
+                return true;
             }
             catch (Exception ex)
             {
+                Console.WriteLine($"Error al eliminar: {ex.Message}");
                 return false;
             }
-        }          
+        }
     }
 }

@@ -2,6 +2,7 @@
 using AccesoDatosSalon.Opetarions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using WebAPI.DTOS;
 
 namespace WebAPI.Controllers
 {
@@ -18,9 +19,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("service")]
-        public ServiceRequest GetService(int id)
+        public async Task <ServiceRequest> GetService(int id)
         {
-            return serviceDAO.getService(id);
+            return await serviceDAO.getService(id);
         }
 
         [HttpPost("service")]
@@ -43,7 +44,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPut("service")]
-        public bool updateService([FromBody] ServiceRequest service)
+        public async Task <bool> updateService([FromBody] ServiceRequest service)
         {
             if (service == null || service.Id <= 0)
             {
@@ -51,7 +52,7 @@ namespace WebAPI.Controllers
             }
             else
             {
-                return serviceDAO.updateService(
+                return await serviceDAO.updateService(
                     service.Id,
                     service.ServiceName,
                     service.DurationMinutes,
@@ -63,9 +64,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpDelete("service")]
-        public bool deleteService(int id)
+        public async Task <bool> deleteService(int id)
         {
-            return serviceDAO.deleteService(id);
+            return await serviceDAO.deleteService(id);
         }
 
         [HttpGet("services/available")]

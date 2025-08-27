@@ -1,6 +1,5 @@
 ﻿using AccesoDatosSalon.Context;
 using AccesoDatosSalon.Models;
-using AccesoDatosSalon.Models.DTOS;
 
 namespace AccesoDatosSalon.Opetarions
 {
@@ -14,7 +13,7 @@ namespace AccesoDatosSalon.Opetarions
             return clients;
         }
 
-        public Client getClient(int id) //selecciona cliente por ID
+        public async Task <Client> getClient(int id) //selecciona cliente por ID
         {
             var client = contexto.Clients.Where(c => c.Id == id).FirstOrDefault(); //recorre la tabla hasta encontrar el id coincidente
             return client;
@@ -47,7 +46,7 @@ namespace AccesoDatosSalon.Opetarions
             }
         }
 
-        public bool updateClient(int id, string dni, string name, string phone, string email, DateOnly fechaRegistro)
+        public async Task <bool> updateClient(int id, string dni, string name, string phone, string email, DateOnly fechaRegistro)
         {
             if (string.IsNullOrEmpty(dni) || string.IsNullOrEmpty(name))
             {
@@ -56,7 +55,7 @@ namespace AccesoDatosSalon.Opetarions
 
             try
             {
-                var cliente = getClient(id);
+                var cliente = await getClient(id);
                 if (cliente == null)
                 {
                     return false;
@@ -77,7 +76,7 @@ namespace AccesoDatosSalon.Opetarions
             }
         }
 
-        public bool deleteCliente(int id)
+        public async Task <bool> deleteCliente(int id)
         {
             try
             {
@@ -88,7 +87,7 @@ namespace AccesoDatosSalon.Opetarions
                 }
                 else
                 {
-                    contexto.Clients.Remove(cliente);
+                    contexto.Clients.Remove(contexto.Clients.FirstOrDefault(c => c.Id == id));                    
                     contexto.SaveChanges();
                     return true;
                 }

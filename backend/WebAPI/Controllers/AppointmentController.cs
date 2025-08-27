@@ -1,9 +1,10 @@
 ﻿using AccesoDatosSalon.Models;
-using AccesoDatosSalon.Models.DTOS;
 using AccesoDatosSalon.Opetarions;
 using Azure.Messaging;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using WebAPI.DTOS;
+using WebAPI.Services;
 
 namespace WebAPI.Controllers
 {
@@ -11,75 +12,131 @@ namespace WebAPI.Controllers
     [ApiController]
     public class AppointmentController : ControllerBase
     {
-        private AppointmentDAO appointmentDAO = new AppointmentDAO();
+        private readonly AppointmentService _appointmentService;
 
-        [HttpGet("appointments/pending")]
-        public List<PendingAppointmentDTO> getPendingAppointments(string stylistUser)
+        public AppointmentController(AppointmentService appointmentService)
         {
-            return appointmentDAO.getPendingAppointments(stylistUser);
+            _appointmentService = appointmentService;
         }
 
-        [HttpGet("appointment")]
-        public Appointment getAppointmen(int id)
+        [HttpGet("mis-citas")]
+        public async Task<IActionResult> GetStylistAppointments()
         {
-            return appointmentDAO.getAppointment(id);
+            var userName = User.Identity.Name;
+            var citas = await _appointmentService.getStylistAppointments(userName);
+            return Ok(citas);
         }
 
-        [HttpPost("appointments")]
-        public bool CreateAppointment([FromBody] CreateAppointmentDTO dto)
+        [HttpPost("crear-cita")]
+        public async Task<IActionResult> CreateAppointment([FromBody] AppointmentBookingDTO cita)
         {
-            // Validación de fecha de cita
-            if (dto == null || dto.FechaDeCita < DateTime.Now)
-                return false;
-
-            // Verificar disponibilidad
-            if (appointmentDAO.IsTimeSlotAvailable(dto.EstilistaUser, dto.FechaDeCita))
-                return false;
-
-            // Crear la cita
-            return appointmentDAO.createAppointment(
-                dto.ClienteId,
-                dto.ServicioId,
-                dto.EstilistaUser,
-                dto.FechaDeCita,
-                dto.notas
-            );
+            try
+            {
+                var result = await _appointmentService.bookAppointment(cita);
+                return Ok(new { success = true, message = "Cita creada exitosamente", data = result });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { success = false, message = ex.Message });
+            }
         }
 
-        [HttpPut("appointment")]
-        public bool updateAppointment([FromBody] Appointment appointment)
+        [HttpGet("citas-id")]
+        public async Task<IActionResult> GetAppointment(int id)
         {
-            return appointmentDAO.updateAppointmentStatus
-                (
-                    appointment.Id,                   
-                    appointment.AppointmentStatus
-                );
+            if (id <= 0)
+            {
+                return BadRequest(new { message = "ID de cita inválido" });
+            }
+
+            try
+            {
+                var appointment = await _appointmentService.getAppointment(id);
+                return appointment != null ? Ok(appointment) : NotFound();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { ex.Message });
+            }
         }
 
-        [HttpGet("appointments/client")]
-        public List<Appointment> GetAppointmentByClient(int clientId)
+        [HttpPut("actualizar-status")]
+        public async Task<IActionResult> UpdateAppointmentStatus([FromBody] AppointmentStatusUpdateDTO statusDTO)
         {
-            return appointmentDAO.GetAppointmentsByClient(clientId);
+            if (statusDTO == null || statusDTO.Id <= 0 || string.IsNullOrEmpty(statusDTO.NewStatus))
+            {
+                return BadRequest(new { message = "Datos incompletos" });
+            }
+            try
+            {
+                bool updated = await _appointmentService.updateAppointmentStatus(statusDTO.Id, statusDTO.NewStatus);
+                return updated ? Ok(new { message = "Estado actualizado" }) : NotFound(new { message = "Cita no encontrada" });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { ex.Message });
+            }
+
         }
 
-        [HttpGet("appointment/date")]
-        public List<Appointment> GetAppointmentsByDate(DateTime date)
+        [HttpPatch("actualizar-cita")]
+        public IActionResult UpdateAppointment([FromBody] AppointmentUpdateDTO updateDTO)
         {
-            return appointmentDAO.GetAppointmentByDate(date.Date);
+            if (updateDTO == null || updateDTO.Id <= 0)
+            {
+                return BadRequest(new { message = "Datos de cita inválidos" });
+            }
+            try
+            {
+                var updatedAppointment = _appointmentService.updateAppointment(updateDTO);
+                return Ok(new { message = "Cita actualizada exitosamente", updatedAppointment });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
 
 
-        [HttpDelete("appointment")]
-        public bool deleteAppointment(int id)
+        // Obtener horarios disponibles para un estilista en una fecha específica
+        [HttpGet("horarios")]
+        public IActionResult GetAvailability(
+            [FromQuery] string stylistUserName,
+            [FromQuery] DateTime date,
+            [FromQuery] int? serviceId = null)
         {
-            return appointmentDAO.deleteAppointment(id);
+            if (string.IsNullOrEmpty(stylistUserName))
+            {
+                return BadRequest(new { message = "Nombre de estilista requerido" });
+            }
+
+            try
+            {
+                var slots = _appointmentService.getAvailableTimeSlots(new AvailabilityRequestDTO
+                {
+                    StylistUserName = stylistUserName,
+                    Date = date,
+                    ServiceId = serviceId
+                });
+                return Ok(slots);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
 
-        [HttpGet("AvailableAppointments")]
-        public List<DateTime> GetAvailableAppointments(string stylistUser, DateTime date)
+        // Obtener citas de un cliente específico
+        [HttpGet("cliente")]
+        public IActionResult GetClientAppointments(int clientId)
         {
-            return appointmentDAO.GetAvailableTimeSlots(stylistUser, date);
-        }
+            if (clientId <= 0)
+            {
+                return BadRequest(new { message = "ID de cliente inválido" });
+            }
 
+            var appointments = _appointmentService.getAppointment(clientId);
+            return Ok(appointments);
+        }
     }
 }

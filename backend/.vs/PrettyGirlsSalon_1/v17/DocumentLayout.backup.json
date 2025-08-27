@@ -3,68 +3,24 @@
   "WorkspaceRootPath": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{13D88DA7-BC33-4F08-B23A-D4FCBB00F056}|WebAPI\\WebAPI.csproj|e:\\tatiana\\4to ciclo i\\aplicaciones web\\proyectofinal\\backend\\webapi\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{13D88DA7-BC33-4F08-B23A-D4FCBB00F056}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{13D88DA7-BC33-4F08-B23A-D4FCBB00F056}|WebAPI\\WebAPI.csproj|e:\\tatiana\\4to ciclo i\\aplicaciones web\\proyectofinal\\backend\\webapi\\controllers\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13D88DA7-BC33-4F08-B23A-D4FCBB00F056}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{95607E54-E07C-471E-BB70-4F7B9CFFD889}|AccesoDatosSalon\\AccesoDatosSalon.csproj|e:\\tatiana\\4to ciclo i\\aplicaciones web\\proyectofinal\\backend\\accesodatossalon\\models\\dtos\\reviewupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95607E54-E07C-471E-BB70-4F7B9CFFD889}|AccesoDatosSalon\\AccesoDatosSalon.csproj|solutionrelative:accesodatossalon\\models\\dtos\\reviewupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95607E54-E07C-471E-BB70-4F7B9CFFD889}|AccesoDatosSalon\\AccesoDatosSalon.csproj|e:\\tatiana\\4to ciclo i\\aplicaciones web\\proyectofinal\\backend\\accesodatossalon\\models\\dtos\\reviewcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95607E54-E07C-471E-BB70-4F7B9CFFD889}|AccesoDatosSalon\\AccesoDatosSalon.csproj|solutionrelative:accesodatossalon\\models\\dtos\\reviewcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{13D88DA7-BC33-4F08-B23A-D4FCBB00F056}|WebAPI\\WebAPI.csproj|e:\\tatiana\\4to ciclo i\\aplicaciones web\\proyectofinal\\backend\\webapi\\controllers\\servicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{13D88DA7-BC33-4F08-B23A-D4FCBB00F056}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\servicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95607E54-E07C-471E-BB70-4F7B9CFFD889}|AccesoDatosSalon\\AccesoDatosSalon.csproj|e:\\tatiana\\4to ciclo i\\aplicaciones web\\proyectofinal\\backend\\accesodatossalon\\operations\\servicedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95607E54-E07C-471E-BB70-4F7B9CFFD889}|AccesoDatosSalon\\AccesoDatosSalon.csproj|solutionrelative:accesodatossalon\\operations\\servicedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95607E54-E07C-471E-BB70-4F7B9CFFD889}|AccesoDatosSalon\\AccesoDatosSalon.csproj|e:\\tatiana\\4to ciclo i\\aplicaciones web\\proyectofinal\\backend\\accesodatossalon\\operations\\clientdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95607E54-E07C-471E-BB70-4F7B9CFFD889}|AccesoDatosSalon\\AccesoDatosSalon.csproj|solutionrelative:accesodatossalon\\operations\\clientdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{13D88DA7-BC33-4F08-B23A-D4FCBB00F056}|WebAPI\\WebAPI.csproj|e:\\tatiana\\4to ciclo i\\aplicaciones web\\proyectofinal\\backend\\webapi\\services\\appointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13D88DA7-BC33-4F08-B23A-D4FCBB00F056}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\services\\appointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{95607E54-E07C-471E-BB70-4F7B9CFFD889}|AccesoDatosSalon\\AccesoDatosSalon.csproj|e:\\tatiana\\4to ciclo i\\aplicaciones web\\proyectofinal\\backend\\accesodatossalon\\operations\\appointmentdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{95607E54-E07C-471E-BB70-4F7B9CFFD889}|AccesoDatosSalon\\AccesoDatosSalon.csproj|solutionrelative:accesodatossalon\\operations\\appointmentdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13D88DA7-BC33-4F08-B23A-D4FCBB00F056}|WebAPI\\WebAPI.csproj|e:\\tatiana\\4to ciclo i\\aplicaciones web\\proyectofinal\\backend\\webapi\\controllers\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{13D88DA7-BC33-4F08-B23A-D4FCBB00F056}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{13D88DA7-BC33-4F08-B23A-D4FCBB00F056}|WebAPI\\WebAPI.csproj|e:\\tatiana\\4to ciclo i\\aplicaciones web\\proyectofinal\\backend\\webapi\\controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{13D88DA7-BC33-4F08-B23A-D4FCBB00F056}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95607E54-E07C-471E-BB70-4F7B9CFFD889}|AccesoDatosSalon\\AccesoDatosSalon.csproj|e:\\tatiana\\4to ciclo i\\aplicaciones web\\proyectofinal\\backend\\accesodatossalon\\operations\\stylistdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95607E54-E07C-471E-BB70-4F7B9CFFD889}|AccesoDatosSalon\\AccesoDatosSalon.csproj|solutionrelative:accesodatossalon\\operations\\stylistdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95607E54-E07C-471E-BB70-4F7B9CFFD889}|AccesoDatosSalon\\AccesoDatosSalon.csproj|e:\\tatiana\\4to ciclo i\\aplicaciones web\\proyectofinal\\backend\\accesodatossalon\\models\\dtos\\createappointmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95607E54-E07C-471E-BB70-4F7B9CFFD889}|AccesoDatosSalon\\AccesoDatosSalon.csproj|solutionrelative:accesodatossalon\\models\\dtos\\createappointmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{13D88DA7-BC33-4F08-B23A-D4FCBB00F056}|WebAPI\\WebAPI.csproj|e:\\tatiana\\4to ciclo i\\aplicaciones web\\proyectofinal\\backend\\webapi\\controllers\\stylistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{13D88DA7-BC33-4F08-B23A-D4FCBB00F056}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\stylistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{95607E54-E07C-471E-BB70-4F7B9CFFD889}|AccesoDatosSalon\\AccesoDatosSalon.csproj|e:\\tatiana\\4to ciclo i\\aplicaciones web\\proyectofinal\\backend\\accesodatossalon\\models\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95607E54-E07C-471E-BB70-4F7B9CFFD889}|AccesoDatosSalon\\AccesoDatosSalon.csproj|solutionrelative:accesodatossalon\\models\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95607E54-E07C-471E-BB70-4F7B9CFFD889}|AccesoDatosSalon\\AccesoDatosSalon.csproj|e:\\tatiana\\4to ciclo i\\aplicaciones web\\proyectofinal\\backend\\accesodatossalon\\models\\dtos\\stylistprofiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95607E54-E07C-471E-BB70-4F7B9CFFD889}|AccesoDatosSalon\\AccesoDatosSalon.csproj|solutionrelative:accesodatossalon\\models\\dtos\\stylistprofiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95607E54-E07C-471E-BB70-4F7B9CFFD889}|AccesoDatosSalon\\AccesoDatosSalon.csproj|e:\\tatiana\\4to ciclo i\\aplicaciones web\\proyectofinal\\backend\\accesodatossalon\\models\\stylist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95607E54-E07C-471E-BB70-4F7B9CFFD889}|AccesoDatosSalon\\AccesoDatosSalon.csproj|solutionrelative:accesodatossalon\\models\\stylist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95607E54-E07C-471E-BB70-4F7B9CFFD889}|AccesoDatosSalon\\AccesoDatosSalon.csproj|e:\\tatiana\\4to ciclo i\\aplicaciones web\\proyectofinal\\backend\\accesodatossalon\\models\\dtos\\appointmentdetailsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95607E54-E07C-471E-BB70-4F7B9CFFD889}|AccesoDatosSalon\\AccesoDatosSalon.csproj|solutionrelative:accesodatossalon\\models\\dtos\\appointmentdetailsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{13D88DA7-BC33-4F08-B23A-D4FCBB00F056}|WebAPI\\WebAPI.csproj|e:\\tatiana\\4to ciclo i\\aplicaciones web\\proyectofinal\\backend\\webapi\\services\\stylistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13D88DA7-BC33-4F08-B23A-D4FCBB00F056}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\services\\stylistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 322,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -89,206 +45,69 @@
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ReviewController.cs",
-              "DocumentMoniker": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\WebAPI\\Controllers\\ReviewController.cs",
-              "RelativeDocumentMoniker": "WebAPI\\Controllers\\ReviewController.cs",
-              "ToolTip": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\WebAPI\\Controllers\\ReviewController.cs",
-              "RelativeToolTip": "WebAPI\\Controllers\\ReviewController.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAkwBcAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T23:42:28.34Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ReviewUpdateDTO.cs",
-              "DocumentMoniker": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\AccesoDatosSalon\\Models\\DTOS\\ReviewUpdateDTO.cs",
-              "RelativeDocumentMoniker": "AccesoDatosSalon\\Models\\DTOS\\ReviewUpdateDTO.cs",
-              "ToolTip": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\AccesoDatosSalon\\Models\\DTOS\\ReviewUpdateDTO.cs",
-              "RelativeToolTip": "AccesoDatosSalon\\Models\\DTOS\\ReviewUpdateDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T23:39:51.621Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ReviewCreateDTO.cs",
-              "DocumentMoniker": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\AccesoDatosSalon\\Models\\DTOS\\ReviewCreateDTO.cs",
-              "RelativeDocumentMoniker": "AccesoDatosSalon\\Models\\DTOS\\ReviewCreateDTO.cs",
-              "ToolTip": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\AccesoDatosSalon\\Models\\DTOS\\ReviewCreateDTO.cs",
-              "RelativeToolTip": "AccesoDatosSalon\\Models\\DTOS\\ReviewCreateDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T23:38:45.948Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ServiceController.cs",
-              "DocumentMoniker": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\WebAPI\\Controllers\\ServiceController.cs",
-              "RelativeDocumentMoniker": "WebAPI\\Controllers\\ServiceController.cs",
-              "ToolTip": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\WebAPI\\Controllers\\ServiceController.cs",
-              "RelativeToolTip": "WebAPI\\Controllers\\ServiceController.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAwwFMAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T22:48:55.552Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ServiceDAO.cs",
-              "DocumentMoniker": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\AccesoDatosSalon\\Operations\\ServiceDAO.cs",
-              "RelativeDocumentMoniker": "AccesoDatosSalon\\Operations\\ServiceDAO.cs",
-              "ToolTip": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\AccesoDatosSalon\\Operations\\ServiceDAO.cs",
-              "RelativeToolTip": "AccesoDatosSalon\\Operations\\ServiceDAO.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAcwBQAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T22:30:03.31Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AppointmentController.cs",
-              "DocumentMoniker": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\WebAPI\\Controllers\\AppointmentController.cs",
-              "RelativeDocumentMoniker": "WebAPI\\Controllers\\AppointmentController.cs",
-              "ToolTip": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\WebAPI\\Controllers\\AppointmentController.cs",
-              "RelativeToolTip": "WebAPI\\Controllers\\AppointmentController.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAIwEoAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T22:42:05.071Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "StylistController.cs",
-              "DocumentMoniker": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\WebAPI\\Controllers\\StylistController.cs",
-              "RelativeDocumentMoniker": "WebAPI\\Controllers\\StylistController.cs",
-              "ToolTip": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\WebAPI\\Controllers\\StylistController.cs",
-              "RelativeToolTip": "WebAPI\\Controllers\\StylistController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T00:47:55.3Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ClientController.cs",
-              "DocumentMoniker": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\WebAPI\\Controllers\\ClientController.cs",
-              "RelativeDocumentMoniker": "WebAPI\\Controllers\\ClientController.cs",
-              "ToolTip": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\WebAPI\\Controllers\\ClientController.cs",
-              "RelativeToolTip": "WebAPI\\Controllers\\ClientController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADoAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T00:02:34.625Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ClientDAO.cs",
-              "DocumentMoniker": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\AccesoDatosSalon\\Operations\\ClientDAO.cs",
-              "RelativeDocumentMoniker": "AccesoDatosSalon\\Operations\\ClientDAO.cs",
-              "ToolTip": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\AccesoDatosSalon\\Operations\\ClientDAO.cs",
-              "RelativeToolTip": "AccesoDatosSalon\\Operations\\ClientDAO.cs",
-              "ViewState": "AgIAAE8AAAAAAAAAAAA0wGkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T00:09:25.315Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "AppointmentDAO.cs",
               "DocumentMoniker": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\AccesoDatosSalon\\Operations\\AppointmentDAO.cs",
               "RelativeDocumentMoniker": "AccesoDatosSalon\\Operations\\AppointmentDAO.cs",
               "ToolTip": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\AccesoDatosSalon\\Operations\\AppointmentDAO.cs",
               "RelativeToolTip": "AccesoDatosSalon\\Operations\\AppointmentDAO.cs",
-              "ViewState": "AgIAAHoAAAAAAAAAAAAgwDUAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAKIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T22:50:44.827Z",
+              "WhenOpened": "2025-07-11T01:32:31.849Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AppointmentService.cs",
+              "DocumentMoniker": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\WebAPI\\Services\\AppointmentService.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Services\\AppointmentService.cs",
+              "ToolTip": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\WebAPI\\Services\\AppointmentService.cs",
+              "RelativeToolTip": "WebAPI\\Services\\AppointmentService.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAowGwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-11T01:32:21.193Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AppointmentController.cs",
+              "DocumentMoniker": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\WebAPI\\Controllers\\AppointmentController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\AppointmentController.cs",
+              "ToolTip": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\WebAPI\\Controllers\\AppointmentController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\AppointmentController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-11T01:32:11.235Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "StylistDAO.cs",
-              "DocumentMoniker": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\AccesoDatosSalon\\Operations\\StylistDAO.cs",
-              "RelativeDocumentMoniker": "AccesoDatosSalon\\Operations\\StylistDAO.cs",
-              "ToolTip": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\AccesoDatosSalon\\Operations\\StylistDAO.cs",
-              "RelativeToolTip": "AccesoDatosSalon\\Operations\\StylistDAO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "StylistController.cs",
+              "DocumentMoniker": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\WebAPI\\Controllers\\StylistController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\StylistController.cs",
+              "ToolTip": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\WebAPI\\Controllers\\StylistController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\StylistController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwBkAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T00:39:57.666Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-11T00:19:51.933Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "CreateAppointmentDTO.cs",
-              "DocumentMoniker": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\AccesoDatosSalon\\Models\\DTOS\\CreateAppointmentDTO.cs",
-              "RelativeDocumentMoniker": "AccesoDatosSalon\\Models\\DTOS\\CreateAppointmentDTO.cs",
-              "ToolTip": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\AccesoDatosSalon\\Models\\DTOS\\CreateAppointmentDTO.cs",
-              "RelativeToolTip": "AccesoDatosSalon\\Models\\DTOS\\CreateAppointmentDTO.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABAAAAAnAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "StylistService.cs",
+              "DocumentMoniker": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\WebAPI\\Services\\StylistService.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Services\\StylistService.cs",
+              "ToolTip": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\WebAPI\\Services\\StylistService.cs",
+              "RelativeToolTip": "WebAPI\\Services\\StylistService.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T05:34:43.943Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "StylistProfileDTO.cs",
-              "DocumentMoniker": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\AccesoDatosSalon\\Models\\DTOS\\StylistProfileDTO.cs",
-              "RelativeDocumentMoniker": "AccesoDatosSalon\\Models\\DTOS\\StylistProfileDTO.cs",
-              "ToolTip": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\AccesoDatosSalon\\Models\\DTOS\\StylistProfileDTO.cs",
-              "RelativeToolTip": "AccesoDatosSalon\\Models\\DTOS\\StylistProfileDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T01:04:03.983Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "LoginDTO.cs",
-              "DocumentMoniker": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\AccesoDatosSalon\\Models\\DTOS\\LoginDTO.cs",
-              "RelativeDocumentMoniker": "AccesoDatosSalon\\Models\\DTOS\\LoginDTO.cs",
-              "ToolTip": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\AccesoDatosSalon\\Models\\DTOS\\LoginDTO.cs",
-              "RelativeToolTip": "AccesoDatosSalon\\Models\\DTOS\\LoginDTO.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T01:00:01.435Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Stylist.cs",
-              "DocumentMoniker": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\AccesoDatosSalon\\Models\\Stylist.cs",
-              "RelativeDocumentMoniker": "AccesoDatosSalon\\Models\\Stylist.cs",
-              "ToolTip": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\AccesoDatosSalon\\Models\\Stylist.cs",
-              "RelativeToolTip": "AccesoDatosSalon\\Models\\Stylist.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAQwA4AAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T01:29:17.371Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "AppointmentDetailsDTO.cs",
-              "DocumentMoniker": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\AccesoDatosSalon\\Models\\DTOS\\AppointmentDetailsDTO.cs",
-              "RelativeDocumentMoniker": "AccesoDatosSalon\\Models\\DTOS\\AppointmentDetailsDTO.cs",
-              "ToolTip": "E:\\Tatiana\\4to Ciclo I\\Aplicaciones Web\\ProyectoFinal\\backend\\AccesoDatosSalon\\Models\\DTOS\\AppointmentDetailsDTO.cs",
-              "RelativeToolTip": "AccesoDatosSalon\\Models\\DTOS\\AppointmentDetailsDTO.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAxwA8AAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T23:12:17.176Z"
+              "WhenOpened": "2025-07-11T00:13:36.133Z"
             }
           ]
         }
