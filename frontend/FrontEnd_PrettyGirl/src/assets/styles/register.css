@@ -1,0 +1,185 @@
+/* Importación de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@400;500;600&display=swap');
+
+/* Estilos base */
+.register-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Barra decorativa superior */
+.register-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #ff9eb7, #d85a7f);
+}
+
+/* Logo del salón */
+.register-logo {
+  display: block;
+  width: 120px;
+  margin: 0 auto 1.5rem;
+}
+
+/* Título del formulario */
+.register-container h2 {
+  text-align: center;
+  color: #d85a7f;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Estructura del formulario */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Grupos de campos */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #5a5a5a;
+  font-size: 0.95rem;
+}
+
+/* Campos de entrada */
+.form-group input {
+  padding: 1rem;
+  border: 1px solid #f0c6d1;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #fffafa;
+  transition: all 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #d85a7f;
+  box-shadow: 0 0 0 3px rgba(216, 90, 127, 0.2);
+  outline: none;
+}
+
+/* Botón de registro */
+.register-button {
+  background: linear-gradient(to right, #ff9eb7, #d85a7f);
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s;
+}
+
+.register-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(216, 90, 127, 0.3);
+}
+
+.register-button:disabled {
+  background: #cccccc;
+  transform: none;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* Enlace de login */
+.login-link {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #5a5a5a;
+  font-size: 0.95rem;
+}
+
+.login-link a {
+  color: #d85a7f;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Mensajes de error */
+.error-message {
+  color: #c62828;
+  background-color: #ffebee;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+/* Versión para desktop */
+@media (min-width: 768px) {
+  .register-container {
+    margin: 3rem auto;
+    padding: 3rem;
+  }
+  
+  .register-logo {
+    width: 150px;
+    margin-bottom: 2rem;
+  }
+  
+  .register-container h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .register-form {
+    gap: 1.8rem;
+  }
+  
+  .form-group input {
+    padding: 1.1rem;
+  }
+}
+
+/* Versión para móviles */
+@media (max-width: 480px) {
+  .register-container {
+    margin: 1rem;
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+  
+  .register-logo {
+    width: 100px;
+  }
+  
+  .register-container h2 {
+    font-size: 1.5rem;
+  }
+  
+  .form-group input {
+    padding: 0.9rem;
+  }
+  
+  .register-button {
+    padding: 0.9rem;
+  }
+}

@@ -1,0 +1,29 @@
+/* src/styles/theme.css */
+:root {
+  /* Colores principales */
+  --primary-pink: #ff85a2;  /* Rosa del logo */
+  --dark-pink: #d35678;     /* Rosa más oscuro */
+  --light-pink: #ffc0cb;    /* Rosa claro */
+  --dark-gray: #333333;     /* Gris oscuro */
+  --medium-gray: #666666;   /* Gris medio */
+  --light-gray: #e0e0e0;    /* Gris claro */
+  --black: #000000;         /* Negro para fondos */
+  --white: #ffffff;         /* Blanco para texto */
+}
+
+/* Estilos generales */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+/* Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  color: var(--primary-pink);
+}
